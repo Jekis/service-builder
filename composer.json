@@ -1,0 +1,12 @@
+{
+    "name": "jekis/service-builder",
+    "type": "library",
+    "autoload": {
+        "psr-4": {"Jekis\\": "lib/"}
+    },
+    "require": {
+        "doctrine/dbal": "2.5.1",
+        "predis/service-provider": "1.0.0",
+        "twig/twig": "1.*"
+    }
+}
