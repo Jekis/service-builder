@@ -16,7 +16,7 @@ class ServiceBuilder
         $lib = static::libs($name);
         $serviceProvider = new $lib['provider'];
         $serviceConfig = isset($lib['config']) ? $lib['config'] : array();
-        $serviceConfig = array_merge($customConfig, $serviceConfig);
+        $serviceConfig = array_merge($serviceConfig, $customConfig);
 
         $app->register($serviceProvider, $serviceConfig);
     }
@@ -39,7 +39,7 @@ class ServiceBuilder
                 'provider' => 'Predis\Silex\ClientServiceProvider',
                 'config' => array(
                     'predis.parameters' => 'tcp://127.0.0.1:6379',
-                    'predis.options'    => array(
+                    'predis.options' => array(
                         'prefix'  => 'newsservice:',
                         'profile' => '3.0',
                     ),
